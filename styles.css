@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  height: 750px;
+  width: 960px;
+}
+.gridCell {
+  background-color: #050505;
+  border: 1px solid #101010;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  padding: 12px;
+}
+.gridCellFullSize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+}
+.gridCell p {
+  line-height: 2;
+  font-size: 12px;
+  padding: 24px;
+  text-align: center;
+}
+.gridCell h2 {
+  font-weight: 900;
+  font-size: 18px;
+  text-align: center;
+}
+.gridCell::before {
+  content: "";
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(var(--clr), transparent,transparent);
+  height: 500px;
+  width: 500px;
+  opacity: 0;
+  transition: 0.5s, top 0s, left 0s;
+}
+
+.gridCell:hover::before {
+  opacity: 1;
+}
+.gridCell::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background-color: rgba(5, 5, 5, 0.95);
+  border-radius: 10px;
+}
+.gridCellLeft,
+.gridCellRight {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  word-break: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gridCellLeft {
+  width: 66%;
+}
+.gridCellRight {
+  width: 34%;
+}
+.flexCol {
+  flex-direction: column;
+}
+.gridCell i {
+  font-size: 64px;
+  color: #303030;
+  transition: 0.5s, top 0s, left 0s;
+}
+.largeIcon {
+  font-size: 256px !important;
+  transform:  translate(50%);
+  right: 0;
+  position: absolute;
+}
+.gridCell:hover > .gridCellRight i {
+  color: var(--clr);
+}
+
+
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 1 / 3 / 2 / 4; }
+.div4 { grid-area: 2 / 1 / 4 / 3; }
+.div5 { grid-area: 4 / 2 / 5 / 4; }
+.div6 { grid-area: 4 / 1 / 5 / 2; }
+.div7 { grid-area: 2 / 3 / 4 / 4; }

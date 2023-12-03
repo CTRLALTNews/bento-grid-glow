@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="grid">
+    <div class="div1 gridCell " style="--clr:#00ff44">
+      <div class="gridCellLeft">
+        <h2>Custom branding</h2>
+      </div>
+      <div class="gridCellRight">
+        <i class="bi bi-brush"></i>
+      </div>
+    </div>
+    <div class="div2 gridCell" style="--clr:#00ffdd">
+      <div class="gridCellLeft">
+        <h2>Automated workflows</h2>
+      </div>
+      <div class="gridCellRight">
+        <i class="bi bi-gear"></i>
+      </div>
+    </div>
+    <div class="div3 gridCell" style="--clr:#0088ff">
+      <div class="gridCellLeft">
+        <h2>Real-time collaboration</h2>
+      </div>
+      <div class="gridCellRight">
+        <i class="bi bi-people"></i>
+      </div>
+    </div>
+    <div class="div4 gridCell" style="--clr:#a600ff">
+      <div class="gridCellLeft flexCol">
+        <h2>Usage analytics</h2>
+        <p>Provides detailed analytics on how users are utilizing different features of the product over time, enabling
+          product teams to identify areas for improvement or new features based on real customer usage data.</p>
+      </div>
+      <div class="gridCellRight ">
+        <i class="bi bi-archive largeIcon flip"></i>
+      </div>
+    </div>
+    <div class="div5 gridCell" style="--clr:#ff00c8">
+      <div class="gridCellLeft">
+        <h2>API integrations</h2>
+      </div>
+      <div class="gridCellRight">
+        <i class="bi bi-code-slash largeIcon"></i>
+      </div>
+    </div>
+    <div class="div6 gridCell" style="--clr:#ff0000">
+      <div class="gridCellLeft">
+        <h2>Custom reports</h2>
+      </div>
+      <div class="gridCellRight">
+        <i class="bi bi-clipboard"></i>
+      </div>
+    </div>
+    <div class="div7 gridCell flexCol" style="--clr:#fff700">
+      <div class="gridCellFullSize flexCol">
+        <h2>Role-based permissions</h2>
+        <p>Allows admin users to configure fine-grained access controls and permissions for different types of users in
+          the system, ensuring users only have access to features and data they need.</p>
+      </div>
+
+    </div>
+    <script>
+      const gridCells = document.querySelectorAll(".gridCell")
+      gridCells.forEach((gridCell) => {
+        gridCell.addEventListener("mousemove", (e) => {
+          const x = e.pageX - gridCell.offsetLeft
+          const y = e.pageY - gridCell.offsetTop
+
+          gridCell.style.setProperty("--left", x + "px")
+          gridCell.style.setProperty("--top", y + "px")
+        })
+      })
+    </script>
+</body>
+
+</html>
